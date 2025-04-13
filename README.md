@@ -63,7 +63,6 @@ infer_type([torch.tensor(1), np.array(2)], agnostic=False)
 
 - 📦 Auto-generate type hints for untyped or runtime-generated data
 - 🧪 Write better tests for dynamic outputs
-- 📄 Assist in documenting APIs and functions
 - 🧠 Debug and inspect complex runtime object structures
 
 ---
