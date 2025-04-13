@@ -1,4 +1,5 @@
 from typing import Any, Dict, List, Set, Tuple, Union
+from logger_config import setup_logger
 
 # Import internal _GenericAlias to allow for positional list inference.
 try:
@@ -7,6 +8,7 @@ except ImportError:
     # For older versions of Python (<3.7), fallback if needed.
     from typing import GenericMeta as _GenericAlias
 
+logger = setup_logger()
 
 def infer_type(obj: Any, agnostic: bool = True) -> Any:
     """
@@ -65,6 +67,12 @@ def infer_type(obj: Any, agnostic: bool = True) -> Any:
     elif isinstance(obj, set):
         if not obj:
             return Set[Any]
+
+        if not agnostic:
+            logger.info(
+                "Sets in Python are inherently unordered. Strict mode (agnostic == False) does not apply to sets. Automatically switch to agnostic = True."
+            )
+            agnostic = True
         element_types = {infer_type(el, agnostic=agnostic) for el in obj}
         if len(element_types) == 1:
             return Set[list(element_types)[0]]
