@@ -92,5 +92,5 @@ This project is licensed under the MIT License. See the [LICENSE](./LICENSE) fil
 
 ## 👤 Author
 
-Made with ❤️ by [Your Name]  
-🔗 GitHub: [https://github.com/yourusername](https://github.com/yourusername)
+👨‍💻 Le Hoang Viet  
+🐙 GitHub: [Mikyx-1](https://github.com/Mikyx-1)
