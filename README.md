@@ -68,16 +68,6 @@ infer_type([torch.tensor(1), torch.tensor(2)])
 
 ---
 
-## 🔮 Roadmap
-
-- [ ] CLI support (e.g., `typepeek file.json`)
-- [ ] String output mode (`as_str=True`)
-- [ ] Support for `Optional`, `TypedDict`, `NamedTuple`, etc.
-- [ ] Type alias simplifier for long `Union[...]` types
-- [ ] JSON Schema export
-
----
-
 ## 🙌 Contributing
 
 Contributions are welcome! If you have an idea, bug, or feature request, feel free to [open an issue](https://github.com/Mikyx-1/typepeek/issues) or submit a pull request.
