@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='typepeek',
-    version='0.1.0',
+    version='0.2.0',
     author='Le Hoang Viet',
     author_email='lehoangviet2k@gmail.com',
     url='https://github.com/Mikyx-1/typepeek',
