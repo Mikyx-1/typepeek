@@ -21,6 +21,8 @@ import torch
 data = [torch.tensor(1), torch.tensor(2), 3]
 print(infer_type(data))
 # Output: List[Union[torch.Tensor, int]]
+print(infer_type(data, agnostic=False))
+#typing.List[torch.Tensor, torch.Tensor, int]
 ```
 
 ---
@@ -39,22 +41,22 @@ print(infer_type(data))
 
 ```python
 infer_type([1, 2, 3])
-# List[int]
+# typing.List[int]
 
 infer_type(["a", 1, 3.14])
-# List[Union[str, int, float]]
+# typing.List[typing.Union[str, int, float]]
 
 infer_type({"name": "Alice", "age": 30})
-# Dict[str, Union[str, int]]
+# typing.Dict[str, Union[str, int]]
 
-infer_type((1, "hello", 3.5))
-# Tuple[int, str, float]
+infer_type((1, "hello", 3.5), agnostic=False)
+#typing.Tuple[int, str, float]
 
 infer_type([[1, 2], [3, 4]])
-# List[List[int]]
+# typing.List[typing.List[int]]
 
-infer_type([torch.tensor(1), torch.tensor(2)])
-# List[torch.Tensor]
+infer_type([torch.tensor(1), np.array(2)], agnostic=False)
+#typing.List[torch.Tensor, numpy.ndarray]
 ```
 
 ---
@@ -65,21 +67,6 @@ infer_type([torch.tensor(1), torch.tensor(2)])
 - 🧪 Write better tests for dynamic outputs
 - 📄 Assist in documenting APIs and functions
 - 🧠 Debug and inspect complex runtime object structures
-
----
-
----
-
-## ✅ TODO
-
-- [ ] Add support for an **agnostic mode** for tuple inference:
-  - Instead of returning `Tuple[int, float, int, int, int]`, return `Tuple[Union[int, float], ...]`
-  - Useful for large or dynamic tuples where element-wise type tracking is unnecessary
-  - Controlled with a flag: `infer_type(obj, mode="agnostic")` or similar
-
-- [ ] Ensure consistent behavior between `list` and `tuple` inference:
-  - Currently, `tuple` inference is **positionally aware**, but `list` is **positionally agnostic**
-  - Agnostic mode should allow uniform handling: both `List[...]` and `Tuple[...]` output `Union[...]` contents
 
 ---
 
