@@ -1,9 +1,10 @@
 from typing import Any, Dict, List, Set, Tuple, Union, get_args, get_origin
 
+
 def infer_type(obj: Any, agnostic: bool = False) -> Any:
     """
     Infer the type hint of the given object.
-    
+
     Parameters:
         obj: The object for which to infer the type.
         agnostic: (bool)
@@ -11,11 +12,11 @@ def infer_type(obj: Any, agnostic: bool = False) -> Any:
               For example, (1, 2.3, 4, 5) becomes Tuple[Union[int, float]]
             - If False, return a positionally aware tuple type.
               For example, (1, 2.3, 4, 5) becomes Tuple[int, float, int, int]
-              
+
     Returns:
         A typing object representing the inferred type.
     """
-    
+
     if isinstance(obj, list):
         if not obj:
             return List[Any]
@@ -62,4 +63,3 @@ def infer_type(obj: Any, agnostic: bool = False) -> Any:
 
 if __name__ == "__main__":
     pass
-
