@@ -29,12 +29,10 @@ print(infer_type(data, agnostic=False))
 
 ## ✨ Features
 
-- ✅ Precise type hint inference for dynamic values
-- 🔁 Supports nested containers (e.g., `List[Dict[str, Tuple[int, float]]]`)
-- 🧠 Handles heterogeneous collections using `Union[...]`
-- 🧹 Compatible with third-party objects (like `torch.Tensor`, `np.ndarray`, ...)
-- ⚙️ Extensible and easy to integrate in tooling, type-checking, or docs
-
+- ✅ **Precise Type Inference** — Accurately infers human-readable type hints from runtime values
+- 🔁 **Deep Nested Structure Support** — Handles arbitrarily nested containers (e.g., `List[Dict[str, Tuple[int, float]]]`)
+- 🧹 **Third-Party Object Compatibility** — Understands common libraries like `torch.Tensor`, `np.ndarray`, and more
+- 🔄 **Ordered and Unordered Type Support** — Handles both ordered collections (e.g., `List[int, float, str, int]`) and unordered collections (e.g., `List[Union[int, float, str]]`).
 ---
 
 ## 📚 Examples
