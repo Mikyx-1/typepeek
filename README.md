@@ -68,6 +68,22 @@ infer_type([torch.tensor(1), torch.tensor(2)])
 
 ---
 
+---
+
+## ✅ TODO
+
+- [ ] Add support for an **agnostic mode** for tuple inference:
+  - Instead of returning `Tuple[int, float, int, int, int]`, return `Tuple[Union[int, float], ...]`
+  - Useful for large or dynamic tuples where element-wise type tracking is unnecessary
+  - Controlled with a flag: `infer_type(obj, mode="agnostic")` or similar
+
+- [ ] Ensure consistent behavior between `list` and `tuple` inference:
+  - Currently, `tuple` inference is **positionally aware**, but `list` is **positionally agnostic**
+  - Agnostic mode should allow uniform handling: both `List[...]` and `Tuple[...]` output `Union[...]` contents
+
+---
+
+
 ## 🙌 Contributing
 
 Contributions are welcome! If you have an idea, bug, or feature request, feel free to [open an issue](https://github.com/Mikyx-1/typepeek/issues) or submit a pull request.
