@@ -1,5 +1,5 @@
 from typing import Any, Dict, List, Set, Tuple, Union
-from logger_config import setup_logger
+from .logger_config import setup_logger
 
 # Import internal _GenericAlias to allow for positional list inference.
 try:

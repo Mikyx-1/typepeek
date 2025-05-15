@@ -4,13 +4,13 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "typepeek"
-version = "0.2.0"
+version = "0.3.0"
 description = "Infer type hints from runtime Python data"
 readme = "README.md"
 requires-python = ">=3.7"
 license = { text = "MIT" }
 authors = [
-  { name="Le Hoang Viet", email="your_email@example.com" }
+  { name="Le Hoang Viet", email="lehoangviet2k@gmail.com" }
 ]
 dependencies = []
 
